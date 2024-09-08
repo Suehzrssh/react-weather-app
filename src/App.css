@@ -1,38 +1,248 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-image: linear-gradient(to left bottom, rgb(35, 35, 39), rgb(55, 55, 70), rgb(95, 95, 105), rgb(182, 173, 172));
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  font-family: Verdana, Geneva, Tahoma, serif;
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+.upPart {
+  width: 100%;
+  height: 220px;
+  background-image: linear-gradient(to right top, rgb(7, 7, 61), rgb(6, 6, 65), rgb(16, 16, 197), rgb(19, 19, 192));
+  background-size: 200% 200%;
+  font-family: cursive;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  padding-bottom: 15px;
+  animation: animate 10s ease infinite;
+}
+@keyframes animate {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+.title {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 30px;
+  -webkit-text-stroke: 2px;
+  color: #fff;
+  -webkit-text-fill-color: gold;
+  -webkit-text-stroke-color: white;
+}
+.intro {
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  color: #fff;
+  -webkit-text-stroke: 1px;
+  -webkit-text-fill-color: gold;
+  -webkit-text-stroke-color: #fff;
+}
+.searchBar {
+  width: 350px;
+  height: 50px;
+  display: flex;
+}
+input {
+  height: 40px;
+  width: 250px;
+  border: 3px solid;
+  border-image: linear-gradient(to right, gold, orange);
+  border-image-slice: 1;
+  outline: none;
+  text-align: center;
+  font-family: cursive;
+  font-size: 20px;
+  text-transform: capitalize;
+  color: #fff;
+  -webkit-text-stroke: 1px;
+  letter-spacing: 1px;
+  -webkit-text-fill-color: gold;
+  background-color: transparent;
+}
+button {
+  height: 100%;
+  width: 100px;
+  font-size: 30px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #fff;
+  -webkit-text-stroke: 1px;
+  letter-spacing: 1px;
+  -webkit-text-fill-color: gold;
+  border: 3px solid;
+  border-image: linear-gradient(to right, orange, gold);
+  border-image-slice: 1;
+  transition: .5s ease-in-out;
+}
+button:hover {
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+  background-color: rgb(241, 225, 130);
+  font-style: oblique;
 }
 
-.App-link {
-  color: #61dafb;
+.weatherBody {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  font-family: cursive;
+}
+.locationWeather {
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.locationInfo {
+  width: 35%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  box-shadow:10px 0 10px rgba(0, 0, 0, .5);
+  filter: drop-shadow(10px 10px 5px black);
+}
+.locationInfo h2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: cursive;
+  margin-left: 20px;
+  font-size: 20px;
+}
+.locationInfo span {
+  margin-left: 10px;
+}
+.ico {
+  transform: scale(1.1);
+  color: rgb(252, 252, 252);
+}
+.currentWeather {
+  width: 60%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: radial-gradient(ellipse at top, orange, transparent),
+  radial-gradient(ellipse at top, red, transparent),
+  radial-gradient(ellipse at top, purple, transparent),
+  radial-gradient(ellipse at top,  blue, transparent);
+  background-repeat: no-repeat;
+  animation: elips 15s ease infinite;
+}
+.clock {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.iconInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.iconText {
+  width: 30%;
+}
+.currIcon {
+  height: 150px;
+  width: 150px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tempWind {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  margin-right: 80px;
+}
+.tempC {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.feelC {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.wind {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.celciusImg {
+  margin-left: 10px;
+}
+.Wind {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.wind {
+  margin-left: 10px;
+  animation: spin 5s linear infinite;
+}
+@keyframes spin {
+  0% {transform: rotate(90deg);}
+  50% {transform: rotate(180deg);}
+  75% {transform: rotate(270deg);}
+  100% {transform: rotate(360deg);}
+}
+.forecastdiv {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.forecast {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  filter: drop-shadow(5px 5px 3px black);
+}
+.cIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cIco {
+  margin-left: 5px;
 }
